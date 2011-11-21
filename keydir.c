@@ -4,7 +4,7 @@
 /* Open a new or existing Bitcask datastore with additional options.
  * Valid options include read write (if this process is going to be a
  * writer and not just a reader) and sync on put (if this writer would
- * prefer to sync the write ﬁle after every write operation).
+ * prefer to sync the write after every write operation).
  * The directory must be readable and writable by this process, and
  * only one process may open a Bitcask with read write at a time. */
 struct bitcask_handle *open(const char *dir, int flags)
@@ -47,8 +47,8 @@ int sync(struct bitcask_handle *bh)
 {
 }
 
-/* Close a Bitcask data store and ﬂush all pending writes */
-(if any) to disk.
+/* Close a Bitcask data store and push all pending writes 
+ * (if any) to disk. */
 
 int close(struct bitcask_handle *bh)
 {
